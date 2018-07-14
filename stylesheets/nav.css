@@ -1,0 +1,39 @@
+nav > div {
+  width: 60%;
+  margin: auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5em;
+  border: 1px solid red;
+  overflow: hidden;
+}
+.nav-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-left {
+  background: lightgray;
+}
+.nav-left > a {
+  font-family: "Chela One";
+  font-size: 3em;
+  padding: 0.5em;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  overflow: hidden;
+  background: lightgray;
+}
+.nav-right a {
+  padding: 2em 0.7em;
+  font-size: 1.25em;
+  border: 1px solid green;
+}
