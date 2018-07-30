@@ -1,39 +1,83 @@
+nav {
+  position: fixed;
+  width: 100%;
+}
+
+.first-nav {
+  background: rgba(255, 255, 255, 0);
+  transition: 0.6s all;
+}
+.first-nav .nav-left > a {
+  color: white;
+}
+.first-nav .nav-right > a {
+  color: white;
+}
+
+.second-nav {
+  background: cornflowerblue;
+  filter: drop-shadow(0 -3mm 5mm black);
+  transition: 0.6s all;
+}
+.second-nav .nav-left > a {
+  color: white;
+}
+.second-nav .nav-right > a {
+  color: white;
+}
+
 nav > div {
-  width: 60%;
+  width: 80vw;
   margin: auto;
 }
 
 .nav-container {
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
-  align-items: center;
-  height: 3.5em;
-  border: 1px solid red;
-  overflow: hidden;
 }
 .nav-container a {
   text-decoration: none;
-  color: black;
 }
 
-.nav-left {
-  background: lightgray;
-}
 .nav-left > a {
+  display: flex;
+  align-items: center;
   font-family: "Chela One";
   font-size: 3em;
-  padding: 0.5em;
+  padding: 0.1em 0.5em;
+}
+.nav-left img {
+  width: 45px;
+  height: 45px;
+  padding-right: 0.3em;
 }
 
 .nav-right {
   display: flex;
-  justify-content: space-between;
-  width: 45%;
-  overflow: hidden;
-  background: lightgray;
+  width: 65%;
+  align-items: center;
+  justify-content: flex-end;
 }
-.nav-right a {
-  padding: 2em 0.7em;
-  font-size: 1.25em;
-  border: 1px solid green;
+.nav-right > a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 1em 0.7em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+.nav-right img {
+  width: 25px;
+  height: 25px;
+  padding-right: 0.35em;
+}
+.nav-right > a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#btn_login, #btn_signup {
+  display: inline-block;
+  margin-left: 0.8em;
 }
