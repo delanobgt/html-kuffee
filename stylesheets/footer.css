@@ -1,0 +1,39 @@
+footer {
+  /* height: 100px; */
+  background-color: rgb(35, 35, 35);
+  padding-top: 1em;
+}
+
+.footer-socialmedia {
+  text-align: center;
+  padding: 0.8em;
+}
+.footer-socialmedia a img {
+  width: 28px;
+  height: 28px;
+  padding: 0 0.5em;
+  opacity: 0.65;
+}
+.footer-socialmedia a img:hover {
+  opacity: 1;
+}
+.footer-text {
+  margin-bottom: 0.5em;
+}
+.footer-text p {
+  color: rgb(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.1em;
+}
+.footer-bottom {
+  
+}
+.footer-bottom p {
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  background-color: black;
+  /* background-color: rgb(100, 150, 240); */
+  padding: 0.25em;
+}

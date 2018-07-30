@@ -1,4 +1,190 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: Raleway;
+}
+span.title-text {
+  font-family: "Chela One"; 
+}
+
+/* header */
+header {
+  background: linear-gradient(to bottom, rgba(100, 150, 230, 0.25), rgba(100, 150, 230, 0.15)),
+              url(../res/images/wallpaper/coffee-brewer-dark.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+header section {
+  display: block;
+  padding-top: 35vh;
+  padding-left: 12vw;
+}
+header section p {
+  color: white;
+  font-weight: bold;
+  font-size: 4.5em;
+}
+
+/* s1 (intro) */
+section.s1 {
+  padding: 3em;
+}
+section.s1 > img {
+  display: block;
+  margin: auto;
+  width: 6em;
+  height: 6em;
+  padding-bottom: 2em;
+}
+section.s1 > h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+section.s1 > p {
+  padding-top: 1.5em;
+  width: 50%;
+  font-size: 1em;
+  text-align: center;
+  margin: auto;
+}
+
+/* s2 (benefit) */
+section.s2 {
+  color: white;
+  background-color: cornflowerblue;
+  padding: 3em;
+}
+section.s2 > h1 {
+  font-size: 2.5em;
+  text-align: center;
+  padding-bottom: 1em;
+}
+#container-card-benefit {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+}
+.tall-bar {
+  background-color: white;
+  width: 1px;
+}
+.card-benefit {
+  width: 22vw;
+}
+.card-benefit img {
+  display: block;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  padding: 0.4em;
+}
+.card-benefit h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.4em;
+}
+.card-benefit p {
+  text-align: justify;
+  padding: 0.4em;
+}
+
+/* s3 (minho testimonials) */
+section.s3 {
+  height: 450px;
+}
+section.s3 > div {
+  height: 100%;
+  width: 100%;
+  background-image: url(../res/images/human/minho-other-product.png),
+                    linear-gradient(to right, white, white);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.desc-minho {
+
+}
+.desc-minho > h1 {
+  font-size: 2.75em;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 1.75em;
+}
+.desc-minho > blockquote { 
+  width: 55vw;
+  background: blue;
+  border-top-right-radius: 25px;
+}
+.desc-minho > blockquote > div { 
+  border-top-right-radius: 25px;
+  color: white;
+  background: cornflowerblue;
+  padding: 1.5em 1em;
+  font-size: 1.5em;
+  width: 92.5%;
+  margin-left: auto;
+  text-align: justify;
+  font-style: italic;
+}
+.desc-minho > blockquote > div > p {
+  text-align: right;
+  font-size: 1.25em;
+}
+
+/* s4 (google maps) */
+section.s4 {
+  display: flex;
+  justify-content: space-around;
+  padding: 2.5em 0;
+  color: white;
+  background-color: crimson;
+}
+.desc-map {
+  width: 40%;
+}
+.desc-map > h1 {
+  font-size: 3.8em;
+  /* background: blue; */
+  font-weight: bold;
+  padding-bottom: 0.6em;
+}
+.desc-map > p {
+  display: flex;
+  font-size: 1.1em;
+  align-items: center;
+}
+.desc-map img {
+  width: 20px;
+  padding: 0.6em;
+}
+
+/* s5 (become a member now!) */
+section.s5 {
+  display: flex;
+}
+.s5-left {
+  width: 100%;
+  padding-bottom: 2em;
+  background-color: cornflowerblue;
+  text-align: center;
+}
+.s5-left > h1 {
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  font-size: 3em;
+}
+.s5-left p {
+  color: white;
+  font-size: 1.2em;
+  padding: 0.8em;
+}
+.s5-left > img {
+  display: block;
+  margin: auto;
+  height: 180px;
+  padding: 1.2em;
 }
