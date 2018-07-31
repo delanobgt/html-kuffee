@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway;
+}
+span.title-text {
+  font-family: "Chela One"; 
+}
+
+.detail-wrapper {
+  padding: 7.5em 3em 3em 3em;
+  background-color: rgb(235, 235, 235);
+}
+.detail-box {
+  width: 90%;
+  height: 75vh;
+  margin: auto;
+  display: flex;
+}
+
+.div-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 75vh;
+}
+
+.div-right {
+  background: white;
+  width: 50%;
+  height: 75vh;
+}
+
+.div-desc {
+  box-sizing: border-box;
+  height: 63vh;
+  padding: 2em;
+}
+.div-desc .desc-title {
+  font-size: 3em;
+}
+.div-desc .desc-category {
+  font-size: 1.4em;
+  color: gray;
+}
+.div-desc .desc-description {
+  font-size: 1.2em;
+  padding-top: 1em;
+  text-align: justify;
+}
+.div-desc .desc-price {
+  font-size: 3em;
+  color: crimson;
+  font-weight: bold;
+  padding-top: 0.5em;
+}
+
+.div-action {
+  height: 12vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.div-action > a {
+  font-size: 1.4em;
+  width: 35%;
+  text-align: center;
+}
