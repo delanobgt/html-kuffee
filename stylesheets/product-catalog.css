@@ -11,7 +11,8 @@ span.title-text {
 header {
   background: linear-gradient(to bottom, rgba(60, 60, 60, 0.5), rgba(60, 60, 60, 0.4)),
               url(../res/images/wallpaper/self-harvest-coffee-beans.jpg);
-  height: 400px;
+  background-attachment: fixed;
+  height: 350px;
   background-size: cover;
 }
 header section h1 {
@@ -22,7 +23,7 @@ header section h1 {
 }
 header section {
   display: block;
-  padding-top: 10.5em;
+  padding-top: 8.5em;
 }
 header section p {
   color: white;
@@ -30,6 +31,9 @@ header section p {
   font-size: 1.5em;
 }
 
+body {
+  background-color: rgb(245, 245, 245);
+}
 body > h1 {
   text-align: center;
   padding-top: 1em;
@@ -37,10 +41,12 @@ body > h1 {
   width: 7em;
   margin: auto;
   border-bottom: 0.15em solid crimson;
+  background-color: rgb(245, 245, 245);
 }
 
 section.s1 {
   padding: 3em 11em 5em 11em;
+  background-color: rgb(245, 245, 245);
 }
 
 .product-row {
@@ -51,7 +57,7 @@ section.s1 {
 
 .product-card {
   background: white;
-  filter: drop-shadow(0.5mm 2mm 2mm rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0.5mm 2mm 2mm rgba(0, 0, 0, 0.25));
   padding-bottom: 0.025em;
   border-radius: 10px;
 }
