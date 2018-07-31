@@ -10,7 +10,7 @@ span.title-text {
 /* header */
 header {
   background: crimson;
-  height: 350px;
+  height: 280px;
   background-size: cover;
 }
 header section h1 {
@@ -24,7 +24,7 @@ header section h1 img {
 }
 header section {
   display: block;
-  padding-top: 9em;
+  padding-top: 7em;
 }
 header section p {
   color: white;

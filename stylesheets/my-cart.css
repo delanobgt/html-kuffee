@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway;
+}
+span.title-text {
+  font-family: "Chela One"; 
+}
+
+/* header */
+header {
+  background: darkorange;
+  height: 280px;
+  background-size: cover;
+}
+header section h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 4.5em;
+  text-align: center;
+}
+header section h1 img {
+  width: 1.35em;
+}
+header section {
+  display: block;
+  padding-top: 7em;
+}
+header section p {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+section.s1 {
+  margin: 2em auto;
+}
+
+table {
+  margin: auto;
+  /* border: 1px solid yellow; */
+}
+table thead {
+  background-color: darkorange;
+}
+table th {
+  padding: 0.5em;
+  font-size: 1.25em;
+  color: black;
+  background-color: darkorange;
+  margin-bottom: 1em;
+}
+table td {
+  border-bottom: 2px solid darkorange;
+}
+
+.td-img {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+.td-img .div-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 125px;
+  height: 125px;
+  margin: auto;
+}
+.td-desc {
+  padding: 1em;
+  width: 425px;
+}
+.td-qty {
+  width: 120px;
+  text-align: center;
+}
+.td-qty input {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: lightgray;
+  text-align: center;
+  font-size: 1.2em;
+}
+.td-qty button {
+  width: 30px;
+  height: 30px;
+  background: cornflowerblue;
+  border: 3px solid cornflowerblue;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+}
+
+.td-price {
+  width: 150px;
+  text-align: center;
+}
+.td-multiplied {
+  width: 150px;
+  text-align: center;
+}
+.td-closer {
+  text-align: center;
+  width: 80px;
+}
+.td-closer img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.right-arrow {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+#btn_checkout {
+  display: block;
+  margin: 2em auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.8em 3.6em;
+}
