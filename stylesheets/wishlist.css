@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway;
+}
+span.title-text {
+  font-family: "Chela One"; 
+}
+
+/* header */
+header {
+  background: crimson;
+  height: 350px;
+  background-size: cover;
+}
+header section h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 4.5em;
+  text-align: center;
+}
+header section h1 img {
+  width: 1em;
+}
+header section {
+  display: block;
+  padding-top: 9em;
+}
+header section p {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+section.s1 {
+  width: 55%;
+  margin: 2em auto;
+}
+.wish-box {
+  margin-top: 3em;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  filter: drop-shadow(0.5mm 2mm 2mm rgba(0, 0, 0, 0.2));
+}
+.wish-box .link-img {
+  display: block;
+  width: 25%;
+  padding-top: 25%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.wish-box .div-middle {
+  width: 50%;
+  padding: 1em;
+  background: white;
+  box-sizing: border-box;
+}
+.wish-box .div-middle .wish-title {
+  padding-bottom: 0.4em;
+}
+
+.wish-box .div-right {
+  width: 25%;
+  background: white;
+  text-align: right;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.wish-box .div-right .div-closer {
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+.wish-box .div-right .div-closer img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.wish-box .div-right .div-closer img:hover {
+  opacity: 0.8;
+}
+.wish-box .div-right .wish-price {
+  font-size: 1.5em;
+  text-align: right;
+  padding: 1.25em 0.4em;
+  font-weight: bold;
+  color: crimson;
+}
+
+.wish-box .div-right .wish-add-cart {
+  margin-right: 0.5em;
+}
