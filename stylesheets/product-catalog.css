@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway;
+}
+span.title-text {
+  font-family: "Chela One"; 
+}
+
+/* header */
+header {
+  background: linear-gradient(to bottom, rgba(60, 60, 60, 0.5), rgba(60, 60, 60, 0.4)),
+              url(../res/images/wallpaper/self-harvest-coffee-beans.jpg);
+  height: 400px;
+  background-size: cover;
+}
+header section h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 4.5em;
+  text-align: center;
+}
+header section {
+  display: block;
+  padding-top: 10.5em;
+}
+header section p {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+body > h1 {
+  text-align: center;
+  padding-top: 1em;
+  font-size: 3em;
+  width: 8em;
+  margin: auto;
+  border-bottom: 0.15em solid crimson;
+}
+
+section.s1 {
+  padding: 5em 8em;
+}
+
+div.product-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 0;
+}
+
+div.product-card {
+  border-radius: 12px;
+  background: white;
+  filter: drop-shadow(0.5mm 2mm 2mm rgba(0, 0, 0, 0.4));
+  padding-bottom: 0.025em;
+}
+
+.img-card {
+  width: 280px;
+  height: 180px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.img-card img {
+  width: 280px;
+}
+
+div.product-card p:nth-of-type(1) {
+  text-align: center;
+  padding-top: 0.2em;
+  padding-bottom: 0em;
+  font-size: 2em;
+}
+div.product-card p:nth-of-type(2) {
+  text-align: center;
+  padding: 0.3em 0;
+  color: gray;
+}
+div.product-card p:nth-of-type(3) {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  padding: 0.2em 0;
+  color: crimson;
+}
+
+div.product-card a {
+  display: inline-block;
+  text-align: center;
+  width: 36%;
+  margin: 0.5em 0.2em;
+}
+
+.product-btn-container {
+  display: flex;
+  justify-content: space-around;
+}

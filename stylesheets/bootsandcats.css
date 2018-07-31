@@ -14,6 +14,10 @@
 .btn-round {
   border-radius: 100px;
 }
+.btn-corner {
+  border-radius: 0 !important;
+}
+
 .btn-large {
   font-size: 1.7em;
 }
@@ -66,4 +70,44 @@
 .btn-crimson:active {
   background: red;
   border: 2px solid red;
+}
+.btn-crimson-hollow {
+  color: crimson;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid crimson;
+  font-weight: 600;
+}
+.btn-crimson-hollow:hover {
+  color: white;
+  background: crimson;
+}
+
+.btn-green {
+  color: white;
+  background-color: limegreen;
+  border: 2px solid limegreen;
+}
+.btn-green-hollow {
+  color: limegreen;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid limegreen;
+}
+.btn-green-hollow:hover {
+  color: white;
+  background: limegreen;
+}
+
+.btn-gray {
+  color: white;
+  background-color: gray;
+  border: 2px solid gray;
+}
+.btn-gray-hollow {
+  color: gray;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid gray;
+}
+.btn-gray-hollow:hover {
+  color: white;
+  background: gray;
 }
