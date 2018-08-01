@@ -111,3 +111,18 @@
   color: white;
   background: gray;
 }
+
+.btn-orange {
+  color: white;
+  background-color: darkorange;
+  border: 2px solid darkorange;
+}
+.btn-orange-hollow {
+  color: darkorange;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid darkorange;
+}
+.btn-orange-hollow:hover {
+  color: white;
+  background: darkorange;
+}

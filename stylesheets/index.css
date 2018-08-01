@@ -8,22 +8,22 @@ span.title-text {
 }
 
 /* header */
-header {
+header.main-header {
   background: linear-gradient(to bottom, rgba(100, 150, 230, 0.25), rgba(100, 150, 230, 0.15)),
               url(../res/images/wallpaper/coffee-brewer-dark.jpg);
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
 }
-header section {
+header.main-header section {
   display: block;
   padding-top: 35vh;
   padding-left: 12vw;
 }
-header section p {
+header.main-header section p {
   color: white;
   font-weight: bold;
-  font-size: 4.5em;
+  font-size: 5em;
 }
 
 /* s1 (intro) */
