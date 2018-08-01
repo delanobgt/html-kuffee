@@ -1,0 +1,102 @@
+#form_platform {
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* div-login-form */
+#div_login_form {
+  width: 400px;
+  height: 350px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+}
+#div_login_form > header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  background: cornflowerblue;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#div_login_form > header > h1 {
+  font-family: "Chela One";
+  font-size: 3em;
+  color: white;
+}
+#div_login_form > header img {
+  width: 45px;
+  height: 45px;
+  padding-right: 0.3em;
+}
+#div_login_form form input {
+  display: block;
+  margin: 1.6em auto;
+  width: 200px;
+  height: 35px;
+  border: none;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  padding: 0 2.5em 0 3.5em;
+}
+#div_login_form p {
+  text-align: center;
+  color: black;
+  margin-top: 1.6em;
+  transition: 0.3s;
+  font-size: 0.9em;
+}
+#div_login_form p span {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+#div_login_form form.touched input[type="email"] {
+  margin-top: 2em;
+  background-image: url(../res/images/icons/email.png);
+  background-size: 27px;
+  background-repeat: no-repeat;
+  background-position: 10px 9px;
+  transition: 0.3s;
+}
+#div_login_form form input[type="email"]:focus {
+  background-image: url(../res/images/icons/email-blue.png);
+  border: 2px solid cornflowerblue;
+  transition: 0.3s;
+}
+#div_login_form form input[type="email"]:invalid {
+  background-image: url(../res/images/icons/email-red.png);
+  border: 2px solid crimson;
+  transition: 0.3s;
+}
+
+#div_login_form form input[type="password"] {
+  background-image: url(../res/images/icons/password.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 12px 5px;
+  transition: 0.3s;
+}
+#div_login_form form input[type="password"]:focus {
+  background-image: url(../res/images/icons/password-blue.png);
+  border: 2px solid cornflowerblue;
+  transition: 0.3s;
+}
+#div_login_form form.touched input[type="password"]:invalid {
+  background-image: url(../res/images/icons/password-red.png);
+  border: 2px solid crimson;
+  transition: 0.3s;
+}
+
+#div_login_form form button {
+  display: block;
+  margin: auto;
+  width: 45%;
+}
