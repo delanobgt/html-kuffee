@@ -27,16 +27,33 @@
       </div>
     </div>
   </nav>
-  <div id="form_platform">
-    <div id="div_login_form">
+  <div id="form_platform" style="display:none;">
+    <div id="div_login_form" style="display:none;">
       <header>
+        <div class="div-closer">
+          <img class="closer" src="../res/images/icons/close-slim.png">
+        </div>
         <h1><img src="res/images/icons/another-coffee.png"> Kuffee</h1>
       </header>
-      <form action="" class="touched">
+      <form action="">
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
         <button type="submit" class="btn btn-blue btn-medium">LOGIN</button>
-        <p>Don't have an account? <span id="btn_sign_up_first">Sign Up!</span></p>
+        <p>Don't have an account? <span id="btn_signup_first">Sign Up!</span></p>
+      </form>
+    </div>
+    <div id="div_signup_form" style="display:none;">
+      <header>
+        <div class="div-closer">
+          <img class="closer" src="../res/images/icons/close-slim.png">
+        </div>
+        <h1><img src="res/images/icons/another-coffee.png"> Kuffee</h1>
+      </header>
+      <form action="">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit" class="btn btn-orange btn-medium">SIGN UP</button>
+        <p>Already have an account? <span id="btn_login_first">Login!</span></p>
       </form>
     </div>
   </div>
