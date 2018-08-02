@@ -93,9 +93,10 @@ section.s1 {
   display: flex;
   justify-content: space-evenly;
 }
-.product-btn-container > a {
+.product-btn-container > button {
   display: inline-block;
   text-align: center;
-  width: 36%;
+  width: 40%;
+  font-size: 1em;
   margin: 0.5em 0.2em;
 }

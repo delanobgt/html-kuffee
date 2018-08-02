@@ -82,3 +82,10 @@ nav > div {
   display: inline-block;
   margin-left: 0.8em;
 }
+#span_user, #btn_logout {
+  display: inline-block;
+  margin-left: 0.8em;
+}
+#span_user {
+  background-color: orchid;
+}
