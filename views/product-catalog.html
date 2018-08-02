@@ -101,13 +101,15 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script src="../scripts/ejs.min.js"></script>
+  <script src="../scripts/doublescore.js"></script>
   <script src="../scripts/nav.js"></script>
   <script src="../scripts/form.js"></script>
   <script src="../scripts/coffee-product-db.js"></script>
   <script src="../scripts/db-reader.js"></script>
   <script>
+    let productCategory = __.getParameterByName('category', window.location);
     let db = new DBReader(CoffeeProductDB);
-    let documents = db.getByCategory('Coffee Bean');
+    let documents = db.getByCategory(productCategory);
 
     (function renderProductContainer(documents) {
       let $productContainer = $('#product_container');

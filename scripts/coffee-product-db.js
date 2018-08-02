@@ -3,122 +3,59 @@ let CoffeeProductDB = [
     id: 1,
     hot: 1,
     category: "Coffee Bean",
-    name: "African Bean",
+    name: "Koffee Kult Beans",
     price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
+    imageUrl: 'coffee-bean/coffee-bean-4.jpg',
+    shortDesc: "Best in America",
+    longDesc: "Roasted to a perfect medium roast. Winner for outstanding quality and balance. Forbes called “Best in America”"
   },
   {
     id: 2,
-    hot: 1,
-    category: "Coffee Grinder",
-    name: "Wakaka Grinder",
+    new: 1,
+    category: "Coffee Bean",
+    name: "Death Wish Beans",
     price: 100000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
+    imageUrl: 'coffee-bean/coffee-bean-5.jpg',
+    shortDesc: "Stay awake all night!",
+    longDesc: "Stay awake with The World's Strongest Coffee. Death Wish Whole Bean Coffee has double the caffeine of your average coffee."
   },
   {
     id: 3,
+    new: 1,
     hot: 1,
-    category: "Coffee Maker",
-    name: "Baby Maker",
-    price: 70000,
+    category: "Coffee Bean",
+    name: "",
+    price: 100000,
     imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
+    shortDesc: "",
+    longDesc: ""
   },
   {
     id: 4,
-    hot: 1,
-    category: "Coffee Tumbler",
-    name: "SWAG Tumbler",
-    price: 696969,
+    category: "Coffee Bean",
+    name: "",
+    price: 100000,
     imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
+    shortDesc: "",
+    longDesc: ""
   },
   {
     id: 5,
     category: "Coffee Bean",
-    name: "African Bean 2",
-    price: 90000,
+    name: "",
+    price: 100000,
     imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
+    shortDesc: "",
+    longDesc: ""
   },
   {
     id: 6,
     category: "Coffee Bean",
-    name: "African Bean 4",
-    price: 90000,
+    name: "",
+    price: 100000,
     imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 7,
-    category: "Coffee Bean",
-    name: "African Bean 43",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 8,
-    category: "Coffee Bean",
-    name: "African Bean 234",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 9,
-    category: "Coffee Bean",
-    name: "African Bean 6546",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 10,
-    category: "Coffee Bean",
-    name: "African Bean 5245",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 11,
-    category: "Coffee Bean",
-    name: "African Bean 23",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 12,
-    category: "Coffee Bean",
-    name: "African Bean 5234",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
-  },
-  {
-    id: 13,
-    category: "Coffee Bean",
-    name: "African Bean 5234",
-    price: 90000,
-    imageUrl: 'coffee-bean/coffee-bean-1.jpg',
-    shortDesc: "Lorem ipsum dolor sit",
-    longDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, rerum, optio necessitatibus explicabo similique ullam iusto voluptatum quis, facere amet deserunt id minus illo odio architecto aspernatur reiciendis repudiandae dolores."
+    shortDesc: "",
+    longDesc: ""
   },
   {
     id: 100,
