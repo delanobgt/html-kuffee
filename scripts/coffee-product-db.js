@@ -57,4 +57,13 @@ let CoffeeProductDB = [
     shortDesc: "",
     longDesc: ""
   },
+  {
+    id: 100,
+    category: "Coffee Grinder",
+    name: "HandGround",
+    price: 90000,
+    imageUrl: 'coffee-grinder/coffee-grinder-product-1',
+    shortDesc: "It has 15 grind settings to choose",
+    longDesc: "This hand mill grinder is one that does its job perfectly! Its quality and performance is just what we need to make that best homemade coffee. What's more - it has 15 grind settings to choose from for any brew method."
+  }
 ];
