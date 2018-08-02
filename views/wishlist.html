@@ -69,11 +69,11 @@
     </section>
   </header>
 
-  <section class="s1">
-    <div class="wish-box">
-      <a class="link-img" href="#" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
+  <section id="wish_container" class="s1">
+    <!-- <div class="wish-box">
+      <a class="link-img" href="./product-detail.html?id=1" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
       <div class="div-middle">
-        <h1 class="wish-title">Kopi Bean</h1>
+        <a class="wish-title" href="./product-detail.html?id=1">Kopi Bean</a>
         <p class="wish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea rerum neque, reprehenderit natus rem consequatur laboriosam saepe. Vitae veritatis </p>
       </div>
       <div class="div-right">
@@ -81,63 +81,88 @@
           <img class="closer" src="../res/images/icons/close.png">
         </div>
         <p class="wish-price">Rp. 90,000</p>
-        <button type="button" class="wish-add-cart btn btn-blue btn-round btn-medium">Add to Cart</button>
+        <button type="button" class="btn-add-cart btn btn-blue btn-round btn-medium">Add to Cart</button>
       </div>
-    </div>
-    <div class="wish-box">
-      <a class="link-img" href="#" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
-      <div class="div-middle">
-        <h1 class="wish-title">Kopi Bean</h1>
-        <p class="wish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea rerum neque, reprehenderit natus rem consequatur laboriosam saepe. Vitae veritatis </p>
-      </div>
-      <div class="div-right">
-        <div class="div-closer">
-          <img class="closer" src="../res/images/icons/close.png">
-        </div>
-        <p class="wish-price">Rp. 90,000</p>
-        <button type="button" class="wish-add-cart btn btn-blue btn-round btn-medium">Add to Cart</button>
-      </div>
-    </div>
-    <div class="wish-box">
-      <a class="link-img" href="#" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
-      <div class="div-middle">
-        <h1 class="wish-title">Kopi Bean</h1>
-        <p class="wish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea rerum neque, reprehenderit natus rem consequatur laboriosam saepe. Vitae veritatis </p>
-      </div>
-      <div class="div-right">
-        <div class="div-closer">
-          <img class="closer" src="../res/images/icons/close.png">
-        </div>
-        <p class="wish-price">Rp. 90,000</p>
-        <button type="button" class="wish-add-cart btn btn-blue btn-round btn-medium">Add to Cart</button>
-      </div>
-    </div>
-    <div class="wish-box">
-      <a class="link-img" href="#" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
-      <div class="div-middle">
-        <h1 class="wish-title">Kopi Bean</h1>
-        <p class="wish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea rerum neque, reprehenderit natus rem consequatur laboriosam saepe. Vitae veritatis </p>
-      </div>
-      <div class="div-right">
-        <div class="div-closer">
-          <img class="closer" src="../res/images/icons/close.png">
-        </div>
-        <p class="wish-price">Rp. 90,000</p>
-        <button type="button" class="wish-add-cart btn btn-blue btn-round btn-medium">Add to Cart</button>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="s1">
-    
+    </div> -->
   </section>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="../scripts/ejs.min.js"></script>
+  <script src="../scripts/coffee-product-db.js"></script>
+  <script src="../scripts/db-reader.js"></script>
   <script src="../scripts/nav.js"></script>
   <script src="../scripts/form.js"></script>
   <script>
+    let user = Cookies.getJSON('user');
+    let db = new DBReader(CoffeeProductDB);
+    let documents = [];
+    for (let wishId in user.wishMap) {
+      if (user.wishMap[wishId] > 0)
+        documents.push(db.getById(wishId));
+    }
+
+    (function renderProductContainer(documents) {
+      let $wishContainer = $('#wish_container');
+      let renderCard = ejs.compile(
+        `
+        <div class="wish-box">
+          <a class="link-img" href="./product-detail.html?id=<%= doc.id %>" style="background-image:url(../res/images/<%= doc.imageUrl %>)"></a>
+          <div class="div-middle">
+            <a class="wish-title" href="./product-detail.html?id=<%= doc.id %>"><%= doc.name %></a>
+            <p class="wish-desc"> <%= doc.longDesc %> </p>
+          </div>
+          <span class="product-id" data-value="<%= doc.id %>" style=""></span>
+          <div class="div-right">
+            <div class="div-closer">
+              <img class="closer" src="../res/images/icons/close.png">
+            </div>
+            <p class="wish-price">Rp. <%= doc.price %></p>
+            <button type="button" class="btn-add-cart btn btn-blue btn-round btn-medium">Add to Cart</button>
+          </div>
+        </div>
+      `
+      );
+      for (let doc of documents) {
+        let $newCard = $(renderCard({doc: doc}));
+        $wishContainer.append($newCard);
+      }
+    })(documents);
+
+    (function buttonEventHandler() {
+      $('.btn-add-cart').click(function() {
+        let $parentBox = $(this).closest('.wish-box');
+        let user = Cookies.getJSON('user');
+        if (user && user.loggedIn) {
+          let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
+          console.log(productID)
+          if (!user.cartMap) user.cartMap = {};
+          if (!user.cartMap[productID]) user.cartMap[productID] = 0;
+          user.cartMap[productID] += 1;
+          user.wishMap[productID] = 0;
+          Cookies.set('user', user, {expires: 30});
+          $parentBox.fadeOut('normal');
+        } else {
+          nav.showLoginForm();
+        }
+      });
+      
+      $('.closer').click(function() {
+        let $parentBox = $(this).closest('.wish-box');
+        let user = Cookies.getJSON('user');
+        if (user && user.loggedIn) {
+          let productID = parseInt($(this).parent().parent().parent().find('span').attr('data-value'));
+          user.wishMap[productID] = 0;
+          console.log(productID)
+          Cookies.set('user', user, {expires: 30});
+          console.log(user)
+          $parentBox.fadeOut('normal');
+        } else {
+          nav.showLoginForm();
+        }
+      });
+    })();
+
   </script>
 </body>
 

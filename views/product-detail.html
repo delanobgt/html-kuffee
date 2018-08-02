@@ -110,15 +110,43 @@
                 Rp. <%= doc.price %>
               </p>
             </div>
+            <span class="product-id" data-value="<%= doc.id %>" style=""></span>
             <div class="div-action">
-              <a href="#" class="btn btn-crimson btn-add-cart">Add to Cart</a>
-              <a href="#" class="btn btn-crimson-hollow btn-add-wishlist">+ Wishlist</a>
+              <button href="#" class="btn btn-crimson btn-add-cart">Add to Cart</button>
+              <button href="#" class="btn btn-crimson-hollow btn-add-wishlist">+ Wishlist</button>
             </div>
           </div>
         </div>
       `);
       $detailWrapper.append($(renderDetail({doc: document})));
     })(selectedDocument);
+
+    (function buttonEventHandler() {
+      $('.btn-add-cart').click(function() {
+        let user = Cookies.getJSON('user');
+        if (user && user.loggedIn) {
+          let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
+          if (!user.cartMap) user.cartMap = {};
+          if (!user.cartMap[productID]) user.cartMap[productID] = 0;
+          user.cartMap[productID] += 1;
+          Cookies.set('user', user, {expires: 30});
+        } else {
+          nav.showLoginForm();
+        }
+      });
+      
+      $('.btn-add-wishlist').click(function() {
+        let user = Cookies.getJSON('user');
+        if (user && user.loggedIn) {
+          let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
+          if (!user.wishMap) user.wishMap = {};
+          if (!user.wishMap[productID]) user.wishMap[productID] = 1;
+          Cookies.set('user', user, {expires: 30});
+        } else {
+          nav.showLoginForm();
+        }
+      });
+    })();
 
   </script>
 </body>

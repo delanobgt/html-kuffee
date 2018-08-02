@@ -61,7 +61,7 @@ span.title-text {
   justify-content: space-evenly;
   align-items: center;
 }
-.div-action > a {
+.div-action > button {
   font-size: 1.4em;
   width: 35%;
   text-align: center;

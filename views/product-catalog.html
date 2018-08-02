@@ -1,81 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Chela+One|Raleway:400,400i,800,900"
-      rel="stylesheet">
-    <link rel="stylesheet" href="../stylesheets/bootsandcats.css">
-    <link rel="stylesheet" href="../stylesheets/nav.css">
-    <link rel="stylesheet" href="../stylesheets/form.css">
-    <link rel="stylesheet" href="../stylesheets/product-catalog.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Chela+One|Raleway:400,400i,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/bootsandcats.css">
+  <link rel="stylesheet" href="../stylesheets/nav.css">
+  <link rel="stylesheet" href="../stylesheets/form.css">
+  <link rel="stylesheet" href="../stylesheets/product-catalog.css">
+</head>
 
-  <body>
-    <nav id="nav" class="first-nav">
-      <div class="nav-container">
-        <div class="nav-left">
-          <a href="index.html"><img src="../res/images/icons/another-coffee.png" alt=""> Kuffee</a>
-        </div>
-        <div class="nav-right">
-          <a href="./category.html"><img src="../res/images/icons/inbox-white.png" alt=""> Category</a>
-          <a id="link_wishlist" href="./wishlist.html"><img src="../res/images/icons/heart-white.png" alt=""> Wishlist</a>
-          <a id="link_mycart" href="./my-cart.html"><img src="../res/images/icons/cart-white.png" alt=""> My Cart</a>
-          <button id="btn_login" class="btn btn-medium btn-blue" type="button" style="display:none">Login</button>
-          <button id="btn_signup" class="btn btn-medium btn-blue-hollow" type="button" style="display:none">Sign Up</button>
-          <span id="span_user" class="btn btn-medium span-profile" type="button" style="display:none">Irvin Delano</span>
-          <button id="btn_logout" class="btn btn-medium btn-orange-hollow" type="button" style="display:none">Logout</button>
-        </div>
+<body>
+  <nav id="nav" class="first-nav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html">
+          <img src="../res/images/icons/another-coffee.png" alt=""> Kuffee</a>
       </div>
-    </nav>
-    <div id="form_platform" style="display:none;">
-      <div id="div_login_form" style="display:none;">
-        <header>
-          <div class="div-closer">
-            <img class="closer" src="../res/images/icons/close-slim.png">
-          </div>
-          <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
-        </header>
-        <form action="">
-          <input type="email" placeholder="Email" required>
-          <input type="password" placeholder="Password" required>
-          <button type="submit" class="btn btn-blue btn-medium">LOGIN</button>
-          <p>Don't have an account? <span id="btn_signup_first">Sign Up!</span></p>
-        </form>
-      </div>
-      <div id="div_signup_form" style="display:none;">
-        <header>
-          <div class="div-closer">
-            <img class="closer" src="../res/images/icons/close-slim.png">
-          </div>
-          <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
-        </header>
-        <form action="">
-          <input type="text" placeholder="Username" required>
-          <input type="email" placeholder="Email" required>
-          <input type="password" placeholder="Password" required>
-          <button type="submit" class="btn btn-orange btn-medium">SIGN UP</button>
-          <p>Already have an account? <span id="btn_login_first">Login!</span></p>
-        </form>
+      <div class="nav-right">
+        <a href="./category.html">
+          <img src="../res/images/icons/inbox-white.png" alt=""> Category</a>
+        <a id="link_wishlist" href="./wishlist.html">
+          <img src="../res/images/icons/heart-white.png" alt=""> Wishlist</a>
+        <a id="link_mycart" href="./my-cart.html">
+          <img src="../res/images/icons/cart-white.png" alt=""> My Cart</a>
+        <button id="btn_login" class="btn btn-medium btn-blue" type="button" style="display:none">Login</button>
+        <button id="btn_signup" class="btn btn-medium btn-blue-hollow" type="button" style="display:none">Sign Up</button>
+        <span id="span_user" class="btn btn-medium span-profile" type="button" style="display:none">Irvin Delano</span>
+        <button id="btn_logout" class="btn btn-medium btn-orange-hollow" type="button" style="display:none">Logout</button>
       </div>
     </div>
+  </nav>
+  <div id="form_platform" style="display:none;">
+    <div id="div_login_form" style="display:none;">
+      <header>
+        <div class="div-closer">
+          <img class="closer" src="../res/images/icons/close-slim.png">
+        </div>
+        <h1>
+          <img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
+      </header>
+      <form action="">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-blue btn-medium">LOGIN</button>
+        <p>Don't have an account?
+          <span id="btn_signup_first">Sign Up!</span>
+        </p>
+      </form>
+    </div>
+    <div id="div_signup_form" style="display:none;">
+      <header>
+        <div class="div-closer">
+          <img class="closer" src="../res/images/icons/close-slim.png">
+        </div>
+        <h1>
+          <img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
+      </header>
+      <form action="">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-orange btn-medium">SIGN UP</button>
+        <p>Already have an account?
+          <span id="btn_login_first">Login!</span>
+        </p>
+      </form>
+    </div>
+  </div>
 
-    <header>
-      <section>
-        <h1>Self-Harvested Coffee Beans</h1>
-        <p>We plant and take care each of our coffee beans as they were our
-          children.</p>
-      </section>
-    </header>
+  <header>
+    <section>
+      <h1>Self-Harvested Coffee Beans</h1>
+      <p>We plant and take care each of our coffee beans as they were our children.
+      </p>
+    </section>
+  </header>
 
-    <h1>Coffee Beans</h1>
+  <h1>Coffee Beans</h1>
 
-    <section id="product_container" class="s1">
-      <!-- <div class="product-row">
+  <section id="product_container" class="s1">
+    <!-- <div class="product-row">
       <div class="product-card">
         <a class="img-link" href="#" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
         <p>Kopi Bean</p>
@@ -87,44 +95,77 @@
         </div>
       </div>
     </div> -->
-    </section>
+  </section>
 
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="../scripts/ejs.min.js"></script>
-    <script src="../scripts/nav.js"></script>
-    <script src="../scripts/form.js"></script>
-    <script src="../scripts/coffee-product-db.js"></script>
-    <script src="../scripts/db-reader.js"></script>
-    <script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="../scripts/ejs.min.js"></script>
+  <script src="../scripts/nav.js"></script>
+  <script src="../scripts/form.js"></script>
+  <script src="../scripts/coffee-product-db.js"></script>
+  <script src="../scripts/db-reader.js"></script>
+  <script>
     let db = new DBReader(CoffeeProductDB);
     let documents = db.getByCategory('Coffee Bean');
 
     (function renderProductContainer(documents) {
       let $productContainer = $('#product_container');
-      let renderCard = ejs.compile(`
+      let renderCard = ejs.compile(
+        `
         <div class="product-card">
           <a class="img-link" href="./product-detail.html?id=<%= doc.id %>&backUrl=<%= window.location %>" style="background-image:url(../res/images/<%= doc.imageUrl %>)"></a>
           <p><%= doc.name %></p>
           <p><%= doc.shortDesc %></p>
           <p>Rp. <%= doc.price %></p>
+          <span class="product-id" data-value="<%= doc.id %>" style=""></span>
           <div class="product-btn-container">
-            <a href="#" class="btn btn-crimson btn-add-cart">Add to Cart</a>
-            <a href="#" class="btn btn-crimson-hollow btn-add-wishlist">+ Wishlist</a>
+            <button type="button" href="#" class="btn btn-crimson btn-add-cart">Add to Cart</button>
+            <button type="button" href="#" class="btn btn-crimson-hollow btn-add-wishlist">+ Wishlist</button>
           </div>
         </div>
-      `);
+      `
+      );
       let i = 0;
       while (i < documents.length) {
         let $row = $(`<div class="product-row"></div>`);
-        for (let ubound = Math.min(i+3, documents.length); i < ubound; i++) {
-          $row.append($(renderCard({doc: documents[i]})));
+        for (let ubound = Math.min(i + 3, documents.length); i < ubound; i++) {
+          $row.append($(renderCard({
+            doc: documents[i]
+          })));
         }
         $productContainer.append($row);
       }
     })(documents);
+
+    (function buttonEventHandler() {
+      $('.btn-add-cart').click(function() {
+        let user = Cookies.getJSON('user');
+        if (user && user.loggedIn) {
+          let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
+          if (!user.cartMap) user.cartMap = {};
+          if (!user.cartMap[productID]) user.cartMap[productID] = 0;
+          user.cartMap[productID] += 1;
+          Cookies.set('user', user, {expires: 30});
+        } else {
+          nav.showLoginForm();
+        }
+      });
+      
+      $('.btn-add-wishlist').click(function() {
+        let user = Cookies.getJSON('user');
+        if (user && user.loggedIn) {
+          let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
+          if (!user.wishMap) user.wishMap = {};
+          if (!user.wishMap[productID]) user.wishMap[productID] = 1;
+          Cookies.set('user', user, {expires: 30});
+        } else {
+          nav.showLoginForm();
+        }
+      });
+    })();
+
   </script>
-  </body>
+</body>
 
 </html>

@@ -150,14 +150,15 @@
   <script src="./scripts/nav.js"></script>
   <script src="./scripts/form.js"></script>
   <script>
-    let user = Cookies.getJSON('user');
-    $('#btn_singmeup').click(() => {
-      nav.showSignupForm();
-    });
-    if (user && user.loggedIn) {
-      $('section.s5').hide();
-    }
-    
+    (function sessionStateHandler() {
+      let user = Cookies.getJSON('user');
+      $('#btn_singmeup').click(() => {
+        nav.showSignupForm();
+      });
+      if (user && user.loggedIn) {
+        $('section.s5').hide();
+      }
+    })();
   </script>
 </body>  
 </html>
