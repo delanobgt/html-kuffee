@@ -16,11 +16,16 @@ span.title-text {
   height: 75vh;
   margin: auto;
   display: flex;
+  background: white;
+  padding: 1em;
+  border-radius: 15px;
+  filter: drop-shadow(0mm 0mm 1mm rgba(0, 0, 0, 0.2));
 }
 
 .div-img {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
   width: 50%;
   height: 75vh;
 }
