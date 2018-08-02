@@ -75,7 +75,6 @@
   color: crimson;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid crimson;
-  font-weight: 600;
 }
 .btn-crimson-hollow:hover {
   color: white;
@@ -125,4 +124,20 @@
 .btn-orange-hollow:hover {
   color: white;
   background: darkorange;
+}
+
+.span-profile {
+  color: white;
+  background-color: cornflowerblue;
+  border: 3px solid lightblue;
+  /* font-weight: bold; */
+}
+.span-profile-hollow {
+  color: lawngreen;
+  background: rgba(255, 255, 255, 0.05);
+  border: 3px solid lightblue;
+}
+.span-profile-hollow:hover {
+  color: white;
+  background: cornflowerblue;
 }
