@@ -2,13 +2,14 @@ class DBReader {
   constructor(documents) {
     this.documents = documents;
     this.idToDocuments = {};
+    this.categoryToDocumentList = {};
 
     for (let doc of documents) {
-      if (!this.idToDocuments[doc.id]) { //if don't exist
-        this.idToDocuments[doc.id] = doc;
-      } else {
-        console.log('[DEBUG]', 'duplicate id:', doc.id);
-      }
+      this.idToDocuments[doc.id] = doc;
+      
+      if (!this.categoryToDocumentList[doc.category])
+        this.categoryToDocumentList[doc.category] = [];
+      this.categoryToDocumentList[doc.category].push(doc);
     }
   }
 
@@ -19,12 +20,6 @@ class DBReader {
     return this.idToDocuments[id];
   }
   getByCategory(category) {
-    let returnDocs = [];
-    for (let doc of this.documents) {
-      if (doc.category && doc.category === category) {
-        returnDocs.push(doc);
-      }
-    }
-    return returnDocs;
+    return this.categoryToDocumentList[category];
   }
 }
