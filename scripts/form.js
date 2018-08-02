@@ -37,20 +37,20 @@
     $signupForm.trigger('reset');
   }
 
-  let $submitLogin = $loginForm.find('input[type="submit"]');
   $loginForm.on('submit', (err) => {
+    err.preventDefault();
     let user = Cookies.getJSON('user');
     let inputEmail = $loginForm.find('input[type="email"]').val();
     let inputPassword = $loginForm.find('input[type="password"]').val();
     if (user && user.email === inputEmail & user.password === inputPassword) {
       user.loggedIn = true;
       Cookies.set('user', user, {expires: 30});
+      window.location.reload(false);
     } else {
       
     }
   });
 
-  let $submitSignup = $signupForm.find('input[type="submit"]');
   $signupForm.on('submit', (err) => {
     Cookies.set('user', {
       loggedIn: true,
