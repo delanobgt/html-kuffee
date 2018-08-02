@@ -69,12 +69,20 @@ let nav = (function() {
   });
 
   //logout button
+  let logoutToHome = false;
+  function setLogoutToHome(flag) {
+    logoutToHome = flag;
+  }
   $('#btn_logout').click(() => {
     let user = Cookies.getJSON('user');
     if (user) {
       user.loggedIn = false;
       Cookies.set('user', user, {expires: 30});
-      window.location.reload(false); 
+      if (logoutToHome) {
+        window.location = window.location + '/../../index.html';
+      } else {
+        window.location.reload(false);
+      }
     }
   });
 
@@ -100,6 +108,7 @@ let nav = (function() {
   }
 
   return {
+    setLogoutToHome: setLogoutToHome,
     unbindScroll: unbindScroll,
     showLoginForm: showLoginForm,
     showSignupForm: showSignupForm

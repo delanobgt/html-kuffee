@@ -14,6 +14,32 @@
 </head>
 
 <body>
+  <section id="checkout_wrapper" style="display:none;">
+    <div id="checkout_dialog">
+      <div id="div_dialog_closer">
+        <img id="dialog_closer" src="../res/images/icons/close-slim-gray.png">
+      </div>
+      <h1>Order Summary</h1>
+      <div>
+        <span>Order Subtotal</span>
+        <span id="order_subtotal">10,000</span>
+      </div>
+      <div>
+        <span>Shipping</span>
+        <span>FREE</span>
+      </div>
+      <div>
+        <span>Estimated Tax</span>
+        <span id="order_estimated_tax">1,234</span>
+      </div>
+      <div>
+        <span><strong>Order Total</strong></span>
+        <span><strong id="order_total">123123</strong></span>
+      </div>
+      <button id="btn_complete_checkout" type="button" class="btn btn-large btn-crimson">COMPLETE CHECKOUT</button>
+    </div>
+  </section>
+
   <nav id="nav" class="first-nav">
     <div class="nav-container">
       <div class="nav-left">
@@ -71,7 +97,7 @@
   </header>
 
   <section class="s1">
-    <table>
+    <table id="table_cart">
       <thead>
         <tr>
           <th colspan="2">Item</th>
@@ -82,7 +108,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr><td class="td-noitem" colspan="6">No item in Cart yet.</td></tr>
+        <!-- <tr>
           <td class="td-img">
             <div class="div-img" style="background-image:url(../res/images/coffee-bean/coffee-bean-2.jpg)"></div>
           </td>
@@ -104,53 +131,7 @@
           <td class="td-closer">
             <img class="closer" src="../res/images/icons/close.png">
           </td>
-        </tr>
-        <tr>
-          <td class="td-img">
-            <div class="div-img" style="background-image:url(../res/images/coffee-bean/coffee-bean-2.jpg)"></div>
-          </td>
-          <td class="td-desc">
-            <h1>Kopi Bean</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam sunt laboriosam molestiae vero vel</p>
-          </td>
-          <td class="td-qty">
-            <button type="button" class="btn-less">-</button>
-            <input type="text" class="text" value="0">
-            <button type="button" class="btn-more">+</button>
-          </td>
-          <td class="td-price">
-            x RP. 90,000
-          </td>
-          <td class="td-multiplied">
-            RP. 180,000
-          </td>
-          <td class="td-closer">
-            <img class="closer" src="../res/images/icons/close.png">
-          </td>
-        </tr>
-        <tr>
-          <td class="td-img">
-            <div class="div-img" style="background-image:url(../res/images/coffee-bean/coffee-bean-2.jpg)"></div>
-          </td>
-          <td class="td-desc">
-            <h1>Kopi Bean</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam sunt laboriosam molestiae vero vel</p>
-          </td>
-          <td class="td-qty">
-            <button type="button" class="btn-less">-</button>
-            <input type="text" class="text" value="0">
-            <button type="button" class="btn-more">+</button>
-          </td>
-          <td class="td-price">
-            x RP. 90,000
-          </td>
-          <td class="td-multiplied">
-            RP. 180,000
-          </td>
-          <td class="td-closer">
-            <img class="closer" src="../res/images/icons/close.png">
-          </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
@@ -159,9 +140,115 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="../scripts/ejs.min.js"></script>
+  <script src="../scripts/coffee-product-db.js"></script>
+  <script src="../scripts/db-reader.js"></script>
   <script src="../scripts/nav.js"></script>
   <script src="../scripts/form.js"></script>
   <script>
+    nav.setLogoutToHome(true);
+    let user = Cookies.getJSON('user');
+    let db = new DBReader(CoffeeProductDB);
+    let documents = [];
+    for (let cartID in user.cartMap) {
+      if (user.cartMap[cartID] > 0) {
+          let doc = db.getById(cartID);
+          doc.qty = user.cartMap[cartID];
+          documents.push(doc);
+        }
+    }
+
+    (function renderProductContainer(documents) {
+      if (!documents.length) return;
+      let $tableCart = $('#table_cart');
+      $tableCart.find('tbody').empty();
+      let renderRow = ejs.compile(
+        `
+          <tr>
+            <td class="td-img">
+              <div class="div-img" style="background-image:url(../res/images/<%= doc.imageUrl %>)"></div>
+            </td>
+            <td class="td-desc">
+              <h1><%= doc.name %></h1>
+              <p><%= doc.longDesc %></p>
+            </td>
+            <td class="td-qty">
+              <span class="product-id" data-value="<%= doc.id %>" style=""></span>
+              <button type="button" class="btn-less">-</button>
+              <input type="text" class="text" value="<%= doc.qty %>">
+              <button type="button" class="btn-more">+</button>
+            </td>
+            <td class="td-price">
+              x RP. <%= doc.price %>
+            </td>
+            <td class="td-multiplied">
+              RP. <%= doc.price * doc.qty %>
+            </td>
+            <td class="td-closer">
+              <span class="product-id" data-value="<%= doc.id %>" style=""></span>
+              <img class="closer" src="../res/images/icons/close.png">
+            </td>
+          </tr>
+        `
+      );
+      for (let doc of documents) {
+        let $newRow = $(renderRow({doc: doc}));
+        $tableCart.append($newRow);
+      }
+    })(documents);
+
+    (function buttonEventHandler() {
+      $('.closer').click(function() {
+        let $parentBox = $(this).closest('tr');
+        let user = Cookies.getJSON('user');
+        let productID = parseInt($(this).siblings('span').attr('data-value'));
+        delete user.cartMap[productID];
+        Cookies.set('user', user, {expires: 30});
+        $parentBox.fadeOut('normal');
+      });
+      $('.btn-less').click(function() {
+        let productID = parseInt($(this).siblings('span').attr('data-value'));
+        let user = Cookies.getJSON('user');
+        user.cartMap[productID] = Math.max(0, user.cartMap[productID]-1);
+        Cookies.set('user', user, {expires: 30});
+        let $txtQty = $(this).siblings('input[type="text"]');
+        $txtQty.val(user.cartMap[productID]);
+        let $tdMultiplied = $(this).parent().parent().find('.td-multiplied');
+        $tdMultiplied.text('Rp. '+(user.cartMap[productID]*db.getById(productID).price));
+      });
+      $('.btn-more').click(function() {
+        let productID = parseInt($(this).siblings('span').attr('data-value'));
+        let user = Cookies.getJSON('user');
+        user.cartMap[productID] += 1;
+        Cookies.set('user', user, {expires: 30});
+        let $txtQty = $(this).siblings('input[type="text"]');
+        $txtQty.val(user.cartMap[productID]);
+        let $tdMultiplied = $(this).parent().parent().find('.td-multiplied');
+        $tdMultiplied.text('Rp. '+(user.cartMap[productID]*db.getById(productID).price));
+      });
+
+      $('#btn_checkout').click(function() {
+        let subtotal = 0;
+        $('.td-multiplied').each( function(index, element) {
+          let cleaned = parseInt($(element).text().trim().replace(/[^0-9]/g, ''));
+          subtotal += cleaned;
+        });
+        $('#order_subtotal').text('Rp. '+subtotal);
+        $('#order_estimated_tax').text('Rp. '+parseInt(subtotal*0.1));
+        $('#order_total').text('Rp. '+(subtotal+parseInt(subtotal*0.1)));
+        $('#checkout_wrapper').fadeIn('normal');
+      });
+      $('#dialog_closer').click(function() {
+        $('#checkout_wrapper').fadeOut('normal');
+      });
+      $('#btn_complete_checkout').click(function() {
+        $('#table_cart tbody').html('<tr><td class="td-noitem" colspan="6">No item in Cart yet.</td></tr>')
+        let user = Cookies.getJSON('user');
+        user.cartMap = {};
+        Cookies.set('user', user, {expires: 30});
+        $('#checkout_wrapper').fadeOut('normal');
+      });
+    })();
   </script>
 </body>
 

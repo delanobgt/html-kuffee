@@ -94,6 +94,7 @@
   <script src="../scripts/nav.js"></script>
   <script src="../scripts/form.js"></script>
   <script>
+    nav.setLogoutToHome(true);
     let user = Cookies.getJSON('user');
     let db = new DBReader(CoffeeProductDB);
     let documents = [];
@@ -133,36 +134,24 @@
       $('.btn-add-cart').click(function() {
         let $parentBox = $(this).closest('.wish-box');
         let user = Cookies.getJSON('user');
-        if (user && user.loggedIn) {
-          let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
-          console.log(productID)
-          if (!user.cartMap) user.cartMap = {};
-          if (!user.cartMap[productID]) user.cartMap[productID] = 0;
-          user.cartMap[productID] += 1;
-          user.wishMap[productID] = 0;
-          Cookies.set('user', user, {expires: 30});
-          $parentBox.fadeOut('normal');
-        } else {
-          nav.showLoginForm();
-        }
+        let productID = parseInt($(this).parent().parent().find('span').attr('data-value'));
+        if (!user.cartMap) user.cartMap = {};
+        if (!user.cartMap[productID]) user.cartMap[productID] = 0;
+        user.cartMap[productID] += 1;
+        user.wishMap[productID] = 0;
+        Cookies.set('user', user, {expires: 30});
+        $parentBox.fadeOut('normal');
       });
       
       $('.closer').click(function() {
         let $parentBox = $(this).closest('.wish-box');
         let user = Cookies.getJSON('user');
-        if (user && user.loggedIn) {
-          let productID = parseInt($(this).parent().parent().parent().find('span').attr('data-value'));
-          user.wishMap[productID] = 0;
-          console.log(productID)
-          Cookies.set('user', user, {expires: 30});
-          console.log(user)
-          $parentBox.fadeOut('normal');
-        } else {
-          nav.showLoginForm();
-        }
+        let productID = parseInt($(this).parent().parent().parent().find('span').attr('data-value'));
+        user.wishMap[productID] = 0;
+        Cookies.set('user', user, {expires: 30});
+        $parentBox.fadeOut('normal');
       });
     })();
-
   </script>
 </body>
 
