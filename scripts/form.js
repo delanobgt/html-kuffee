@@ -47,7 +47,7 @@
       Cookies.set('user', user, {expires: 30});
       window.location.reload(false);
     } else {
-      
+      toaster.show('Wrong Email / Password', 'crimson');
     }
   });
 

@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="../stylesheets/bootsandcats.css">
   <link rel="stylesheet" href="../stylesheets/nav.css">
   <link rel="stylesheet" href="../stylesheets/form.css">
+  <link rel="stylesheet" href="../stylesheets/toaster.css">
   <link rel="stylesheet" href="../stylesheets/my-cart.css ">
 </head>
 
 <body>
+  <section id="section_toaster"></section>
+
   <section id="checkout_wrapper" style="display:none;">
     <div id="checkout_dialog">
       <div id="div_dialog_closer">
@@ -143,6 +146,7 @@
   <script src="../scripts/ejs.min.js"></script>
   <script src="../scripts/coffee-product-db.js"></script>
   <script src="../scripts/db-reader.js"></script>
+  <script src="../scripts/toaster.js"></script>
   <script src="../scripts/nav.js"></script>
   <script src="../scripts/form.js"></script>
   <script>
@@ -205,6 +209,7 @@
         delete user.cartMap[productID];
         Cookies.set('user', user, {expires: 30});
         $parentBox.fadeOut('normal');
+        toaster.show('Item removed', 'cornflowerblue');
       });
       $('.btn-less').click(function() {
         let productID = parseInt($(this).siblings('span').attr('data-value'));

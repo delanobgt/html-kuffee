@@ -1,0 +1,17 @@
+#section_toaster {
+  position: fixed;
+  width: 300px;
+  bottom: 50px;
+  margin-left: 100px;
+  z-index: 9999;
+}
+
+.toaster {
+  color: white;
+  background: cornflowerblue;
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 7px;
+  margin-top: 1em;
+  filter: drop-shadow(0mm 0mm 5mm rgba(0, 0, 0, 0.45));
+}

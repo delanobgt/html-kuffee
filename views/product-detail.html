@@ -9,9 +9,12 @@
   <link rel="stylesheet" href="../stylesheets/bootsandcats.css">
   <link rel="stylesheet" href="../stylesheets/nav.css">
   <link rel="stylesheet" href="../stylesheets/form.css">
+  <link rel="stylesheet" href="../stylesheets/toaster.css">
   <link rel="stylesheet" href="../stylesheets/product-detail.css ">
 </head>
 <body>
+    <section id="section_toaster"></section>
+
     <nav id="nav" class="first-nav">
       <div class="nav-container">
         <div class="nav-left">
@@ -84,6 +87,7 @@
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script src="../scripts/ejs.min.js"></script>
   <script src="../scripts/doublescore.js"></script>
+  <script src="../scripts/toaster.js"></script>
   <script src="../scripts/nav.js"></script>
   <script src="../scripts/form.js"></script>
   <script src="../scripts/coffee-product-db.js"></script>
@@ -130,6 +134,7 @@
           if (!user.cartMap[productID]) user.cartMap[productID] = 0;
           user.cartMap[productID] += 1;
           Cookies.set('user', user, {expires: 30});
+          toaster.show('Added to Cart', 'cornflowerblue');
         } else {
           nav.showLoginForm();
         }
@@ -142,6 +147,7 @@
           if (!user.wishMap) user.wishMap = {};
           if (!user.wishMap[productID]) user.wishMap[productID] = 1;
           Cookies.set('user', user, {expires: 30});
+          toaster.show('Added to Wishlist', 'cornflowerblue');
         } else {
           nav.showLoginForm();
         }
