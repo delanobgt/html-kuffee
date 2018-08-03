@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Chela+One|Raleway:400,400i,800,900" rel="stylesheet">
   <link rel="stylesheet" href="../stylesheets/bootsandcats.css">
   <link rel="stylesheet" href="../stylesheets/nav.css">
+  <link rel="stylesheet" href="../stylesheets/form.css">
   <link rel="stylesheet" href="../stylesheets/footer.css">
   <link rel="stylesheet" href="../stylesheets/category.css">
 </head>
@@ -18,14 +19,47 @@
         <a href="../index.html"><img src="../res/images/icons/another-coffee.png" alt=""> Kuffee</a>
       </div>
       <div class="nav-right">
-        <a href="views/category.html"><img src="../res/images/icons/inbox-white.png" alt=""> Category</a>
-        <a href="#"><img src="../res/images/icons/heart-white.png" alt=""> Wishlist</a>
-        <a href="#"><img src="../res/images/icons/cart-white.png" alt=""> My Cart</a>
-        <button id="btn_login" class="btn btn-medium btn-blue" type="button">Login</button>
-        <button id="btn_signup" class="btn btn-medium btn-blue-hollow" type="button">Sign Up</button>
+        <a href="./category.html"><img src="../res/images/icons/inbox-white.png" alt=""> Category</a>
+        <a id="link_wishlist" href="./wishlist.html"><img src="../res/images/icons/heart-white.png" alt=""> Wishlist</a>
+        <a id="link_mycart" href="./my-cart.html"><img src="../res/images/icons/cart-white.png" alt=""> My Cart</a>
+        <button id="btn_login" class="btn btn-medium btn-blue" type="button" style="display:none">Login</button>
+        <button id="btn_signup" class="btn btn-medium btn-blue-hollow" type="button" style="display:none">Sign Up</button>
+        <span id="span_user" class="btn btn-medium span-profile" type="button" style="display:none">Irvin Delano</span>
+        <button id="btn_logout" class="btn btn-medium btn-orange-hollow" type="button" style="display:none">Logout</button>
       </div>
     </div>
   </nav>
+  <div id="form_platform" style="display:none;">
+    <div id="div_login_form" style="display:none;">
+      <header>
+        <div class="div-closer">
+          <img class="closer" src="../res/images/icons/close-slim.png">
+        </div>
+        <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
+      </header>
+      <form action="">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-blue btn-medium">LOGIN</button>
+        <p>Don't have an account? <span id="btn_signup_first">Sign Up!</span></p>
+      </form>
+    </div>
+    <div id="div_signup_form" style="display:none;">
+      <header>
+        <div class="div-closer">
+          <img class="closer" src="../res/images/icons/close-slim.png">
+        </div>
+        <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
+      </header>
+      <form action="">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-orange btn-medium">SIGN UP</button>
+        <p>Already have an account? <span id="btn_login_first">Login!</span></p>
+      </form>
+    </div>
+  </div>
 
   <div class="slideshow-container">
     <div class="mySlides fade">

@@ -30,7 +30,7 @@ let nav = (function() {
       $('#btn_login').hide();
       $('#btn_signup').hide();
       $('#btn_logout').show();
-      $('#span_user').show();
+      $('#span_user').text(user.name).show();
     } else {
       $('#btn_login').show();
       $('#btn_signup').show();
@@ -47,8 +47,10 @@ let nav = (function() {
   //login event button
   function showLoginForm() {
     $divSignupForm.hide('fast', () => {
-      $formPlatform.fadeIn('normal', () => {
-        $divLoginForm.slideDown('normal');
+      $divLoginForm.hide('fast', () => {
+        $formPlatform.fadeIn('normal', () => {
+          $divLoginForm.slideDown('normal');
+        });
       });
     });
   }
@@ -58,9 +60,11 @@ let nav = (function() {
 
   //singup button event
   function showSignupForm() {
-    $divLoginForm.hide('fast', () => {
-      $formPlatform.fadeIn('normal', () => {
-        $divSignupForm.slideDown('normal');
+    $divSignupForm.hide('fast', () => {
+      $divLoginForm.hide('fast', () => {
+        $formPlatform.fadeIn('normal', () => {
+          $divSignupForm.slideDown('normal');
+        });
       });
     });
   }

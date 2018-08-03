@@ -190,7 +190,7 @@ let CoffeeProductDB = [
     price: 225000,
     imageUrl: 'coffee-bean/coffee-maker-32.jpg',
     shortDesc: "Auto drip-stop",
-    longDesc: "Simple to operate and quiet brewing process that brews a full carafe in just 6 minutes. Unique, copper boiling element rapidly heats water to control brewing temperature between 196 to 205 degrees Fahrenheit which is important for coffee soluble extraction, then automatically switches off when the water reservoir is empty."
+    longDesc: "Simple to operate and quiet brewing process that brews a full carafe in just 6 minutes. Unique, copper boiling element rapidly heats water to control brewing temperature between 196 to 205 degrees Fahrenheit which is important for coffee soluble extraction."
   },
   {
     id: 33,

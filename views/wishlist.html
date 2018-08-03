@@ -14,53 +14,53 @@
 </head>
 
 <body>
-  <nav id="nav" class="first-nav">
-    <div class="nav-container">
-      <div class="nav-left">
-        <a href="index.html"><img src="../res/images/icons/another-coffee.png" alt=""> Kuffee</a>
-      </div>
-      <div class="nav-right">
-        <a href="./category.html"><img src="../res/images/icons/inbox-white.png" alt=""> Category</a>
-        <a id="link_wishlist" href="./wishlist.html"><img src="../res/images/icons/heart-white.png" alt=""> Wishlist</a>
-        <a id="link_mycart" href="./my-cart.html"><img src="../res/images/icons/cart-white.png" alt=""> My Cart</a>
-        <button id="btn_login" class="btn btn-medium btn-blue" type="button" style="display:none">Login</button>
-        <button id="btn_signup" class="btn btn-medium btn-blue-hollow" type="button" style="display:none">Sign Up</button>
-        <span id="span_user" class="btn btn-medium span-profile" type="button" style="display:none">Irvin Delano</span>
-        <button id="btn_logout" class="btn btn-medium btn-orange-hollow" type="button" style="display:none">Logout</button>
-      </div>
-    </div>
-  </nav>
-  <div id="form_platform" style="display:none;">
-    <div id="div_login_form" style="display:none;">
-      <header>
-        <div class="div-closer">
-          <img class="closer" src="../res/images/icons/close-slim.png">
+    <nav id="nav" class="first-nav">
+      <div class="nav-container">
+        <div class="nav-left">
+          <a href="../index.html"><img src="../res/images/icons/another-coffee.png" alt=""> Kuffee</a>
         </div>
-        <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
-      </header>
-      <form action="">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit" class="btn btn-blue btn-medium">LOGIN</button>
-        <p>Don't have an account? <span id="btn_signup_first">Sign Up!</span></p>
-      </form>
-    </div>
-    <div id="div_signup_form" style="display:none;">
-      <header>
-        <div class="div-closer">
-          <img class="closer" src="../res/images/icons/close-slim.png">
+        <div class="nav-right">
+          <a href="./category.html"><img src="../res/images/icons/inbox-white.png" alt=""> Category</a>
+          <a id="link_wishlist" href="./wishlist.html"><img src="../res/images/icons/heart-white.png" alt=""> Wishlist</a>
+          <a id="link_mycart" href="./my-cart.html"><img src="../res/images/icons/cart-white.png" alt=""> My Cart</a>
+          <button id="btn_login" class="btn btn-medium btn-blue" type="button" style="display:none">Login</button>
+          <button id="btn_signup" class="btn btn-medium btn-blue-hollow" type="button" style="display:none">Sign Up</button>
+          <span id="span_user" class="btn btn-medium span-profile" type="button" style="display:none">Irvin Delano</span>
+          <button id="btn_logout" class="btn btn-medium btn-orange-hollow" type="button" style="display:none">Logout</button>
         </div>
-        <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
-      </header>
-      <form action="">
-        <input type="text" placeholder="Username" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit" class="btn btn-orange btn-medium">SIGN UP</button>
-        <p>Already have an account? <span id="btn_login_first">Login!</span></p>
-      </form>
+      </div>
+    </nav>
+    <div id="form_platform" style="display:none;">
+      <div id="div_login_form" style="display:none;">
+        <header>
+          <div class="div-closer">
+            <img class="closer" src="../res/images/icons/close-slim.png">
+          </div>
+          <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
+        </header>
+        <form action="">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="btn btn-blue btn-medium">LOGIN</button>
+          <p>Don't have an account? <span id="btn_signup_first">Sign Up!</span></p>
+        </form>
+      </div>
+      <div id="div_signup_form" style="display:none;">
+        <header>
+          <div class="div-closer">
+            <img class="closer" src="../res/images/icons/close-slim.png">
+          </div>
+          <h1><img src="../res/images/icons/another-coffee.png"> Kuffee</h1>
+        </header>
+        <form action="">
+          <input type="text" placeholder="Username" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="btn btn-orange btn-medium">SIGN UP</button>
+          <p>Already have an account? <span id="btn_login_first">Login!</span></p>
+        </form>
+      </div>
     </div>
-  </div>
 
   <header>
     <section>
@@ -70,6 +70,7 @@
   </header>
 
   <section id="wish_container" class="s1">
+    <p id="p_empty">*No Item in WishList yet*</p>
     <!-- <div class="wish-box">
       <a class="link-img" href="./product-detail.html?id=1" style="background-image:url(../res/images/coffee-bean/coffee-bean-1.jpg)"></a>
       <div class="div-middle">
@@ -99,14 +100,17 @@
     let db = new DBReader(CoffeeProductDB);
     let documents = [];
     for (let wishId in user.wishMap) {
-      if (user.wishMap[wishId] > 0)
+      if (user.wishMap[wishId] > 0) {
         documents.push(db.getById(wishId));
+      }
     }
 
     (function renderProductContainer(documents) {
+      if (!documents.length) return;
+      $('#p_empty').hide();
       let $wishContainer = $('#wish_container');
       let renderCard = ejs.compile(
-        `
+      `
         <div class="wish-box">
           <a class="link-img" href="./product-detail.html?id=<%= doc.id %>" style="background-image:url(../res/images/<%= doc.imageUrl %>)"></a>
           <div class="div-middle">
@@ -149,7 +153,12 @@
         let productID = parseInt($(this).parent().parent().parent().find('span').attr('data-value'));
         user.wishMap[productID] = 0;
         Cookies.set('user', user, {expires: 30});
-        $parentBox.fadeOut('normal');
+        $parentBox.fadeOut('normal', function() {
+          console.log($(this).parent().parent().parent().parent().find('.wish-box:visible'));
+          if ($(this).parent().parent().parent().parent().find('.wish-box:visible').length == 0) {
+            $('#p_empty').show();
+          }
+        });
       });
     })();
   </script>

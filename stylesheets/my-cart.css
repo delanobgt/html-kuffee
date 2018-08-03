@@ -43,7 +43,7 @@ section.s1 {
 table {
   margin: auto;
   min-width: 900px;
-  /* border: 1px solid yellow; */
+  background-color: white;
 }
 table thead {
   background-color: darkorange;
@@ -72,7 +72,8 @@ table td {
 }
 .td-img .div-img {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
   width: 125px;
   height: 125px;
   margin: auto;

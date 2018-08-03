@@ -47,13 +47,16 @@ section.s1 {
   display: flex;
   border-radius: 10px;
   filter: drop-shadow(0.5mm 2mm 2mm rgba(0, 0, 0, 0.2));
+  background-color: white;
+  padding: 0.75em 0.55em;
 }
 .wish-box .link-img {
   display: block;
   width: 25%;
   padding-top: 25%;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: contain;
+  background-position: center center;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
@@ -103,4 +106,10 @@ section.s1 {
 
 .wish-box .div-right .btn-add-cart {
   margin-right: 0.5em;
+}
+
+#p_empty {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 2.5em;
 }
